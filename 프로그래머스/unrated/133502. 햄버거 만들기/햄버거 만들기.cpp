@@ -6,15 +6,18 @@ using namespace std;
 
 int solution(vector<int> ingredient) {
     int answer = 0;
-    vector<int> cook = {-1};
+    string str = "";
 
     for(auto n : ingredient){
-        int cook_bf = cook.back(); 
-
-        if(cook_bf == 1 && n == 2) cook.back() = 12;
-        else if(cook_bf == 12 && n == 3) cook.back() = 123;
-        else if(cook_bf == 123 && n == 1) cook.pop_back(), answer++;
-        else cook.push_back(n);
+        str += to_string(n);
+        int len = str.length();
+        if(len >= 4){
+            int inx = len - 4;
+            if(str.substr(inx) == "1231"){
+                str = str.substr(0, inx);
+                answer++;
+            }
+        }
     }
 
     return answer;
