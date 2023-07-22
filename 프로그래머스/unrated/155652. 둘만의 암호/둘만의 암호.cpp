@@ -24,6 +24,7 @@ string solution(string s, string skip, int index) {
             }
         }
         answer += c;
+        //h
     }
 
 
