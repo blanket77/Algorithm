@@ -3,6 +3,13 @@
 
 using namespace std;
 
+int ranks(int a){
+    if(a >= 2)
+        return 7-a;
+    else
+        return 6;    
+}
+
 vector<int> solution(vector<int> lottos, vector<int> win_nums) {
     vector<int> answer;
 
@@ -18,22 +25,13 @@ vector<int> solution(vector<int> lottos, vector<int> win_nums) {
     for(auto i : lottos){
         if(m[i])
             count++;
-        
+
         if(i == 0)
             zerocount++;
     }
 
-    if(count+zerocount >= 2)
-        answer.push_back(7-(count+zerocount));
-    else
-        answer.push_back(6);
-
-    if(count >= 2)
-        answer.push_back(7-count);
-    else
-        answer.push_back(6);
-
-
+    answer.push_back(ranks(count+zerocount));
+    answer.push_back(ranks(count));
 
     return answer;
 }
