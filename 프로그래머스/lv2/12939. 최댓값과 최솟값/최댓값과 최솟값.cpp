@@ -19,11 +19,9 @@ string solution(string s) {
         }
         else
             a += c;
-
-        if(n == s.size()-1 )
-            num.push_back(stoi(a));
     }
-
+    num.push_back(stoi(a)); // 마지막 숫자를 등록
+        
     sort(num.begin(), num.end());
     
     answer += to_string(num.front()) + " ";
