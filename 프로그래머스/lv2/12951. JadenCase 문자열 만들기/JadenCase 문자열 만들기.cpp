@@ -17,7 +17,7 @@ string solution(string s) {
     for(int i = 1 ; i < s.size() ; i++){
         char c = s[i];
 
-        if(c == ' ' && s[i+1] != ' ' && islower(s[i+1])){
+        if(c == ' ' && s[i+1] != ' '){
             s[i+1] = s[i+1] - 'a' + 'A';
         }
     }
