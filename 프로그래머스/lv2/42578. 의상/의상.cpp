@@ -22,5 +22,9 @@ int solution(vector<vector<string>> clothes) {
     }
 
 
-    return --answer;
+    return --answer; // 모두 안 입었을 때 고려
+}
+
+int main(){
+    solution(	{{"yellow_hat", "headgear"}, {"blue_sunglasses", "eyewear"}, {"green_turban", "headgear"}});
 }
