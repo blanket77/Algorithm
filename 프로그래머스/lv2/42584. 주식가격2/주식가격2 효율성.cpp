@@ -11,28 +11,19 @@ void init_q(queue<int>& qq, vector<int>& t){
 }
 
 int how_long(queue<int> q){
-    int len = q.size();
-    
+
     int basis = q.front();
     q.pop();
 
-    int count = 1;
+    int count = 0;
     while(!q.empty()){
-        if(basis <= q.front()){
-            count++;
-        }
-        else{
-            count++;
+        count++;
+        if(basis > q.front())
             break;
-        }
         q.pop();
     }
 
-    if(count == 1){
-        return len - count;
-    }
-
-    return count-1;
+    return count;
 }
 
 vector<int> solution(vector<int> prices) {
@@ -47,4 +38,8 @@ vector<int> solution(vector<int> prices) {
     }
 
     return answer;
+}
+
+int main(){
+    solution({1, 2, 3, 2, 3});
 }
