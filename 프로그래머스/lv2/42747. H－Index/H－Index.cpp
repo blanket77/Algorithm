@@ -15,6 +15,7 @@ int solution(vector<int> citations) {
             break;
         }
 
+        // 만약 모든 논문이 총 갯수이상 인용이 되었으면 
         if(i == citations.size()-1){
             answer = citations.size();
         }
