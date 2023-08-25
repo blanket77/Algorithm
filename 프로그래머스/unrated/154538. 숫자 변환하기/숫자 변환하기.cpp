@@ -7,7 +7,7 @@
 
 using namespace std;
 
-bool visited[3000001] = {false,};
+bool visited[1000001] = {false,};
 int answer = INT_MAX;
 
 int bfs(const int& x, const int& y, const int& n){
@@ -25,17 +25,17 @@ int bfs(const int& x, const int& y, const int& n){
             return count;
         else if(num < y){
             int a = num + n;
-            if( !visited[a]) {
+            if(a <= y && !visited[a]) {
                 q.push({a,count+1});
                 visited[a] = true;
             }
             int b = 2*num;
-            if(!visited[b]) {
+            if(b <= y && !visited[b]) {
                 q.push({b,count+1});
                 visited[b] = true;
             }
             int c = 3*num;
-            if(!visited[c]) {
+            if(c <= y && !visited[c]) {
                 q.push({c,count+1});
                 visited[c] = true;
             }
