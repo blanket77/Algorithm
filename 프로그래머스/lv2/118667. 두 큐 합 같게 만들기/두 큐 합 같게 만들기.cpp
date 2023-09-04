@@ -12,12 +12,21 @@ long long q_sum(const vector<int> &q){
     return sum;
 }
 
+queue<int> vec_to_que(const vector<int> v){
+    queue<int> q;
+    
+    for(auto n : v)
+        q.push(n);
+
+    return q;
+}
+
 int solution(vector<int> queue1, vector<int> queue2) {
     int answer = 0;
     
-    queue<int> q1 {{begin(queue1), end(queue1)}};
-    queue<int> q2 {{begin(queue2), end(queue2)}};
-
+    queue<int> q1 = vec_to_que(queue1);
+    queue<int> q2 = vec_to_que(queue2);
+    
     long long q1_sum = q_sum(queue1);
     long long q2_sum = q_sum(queue2);
 
